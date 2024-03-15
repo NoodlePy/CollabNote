@@ -2,6 +2,6 @@
 
 Run the following commands:
 
-cd private
+cd private  
 npm i
 

@@ -1,0 +1,117 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    background-image: url("https://t3.ftcdn.net/jpg/03/28/34/94/240_F_328349409_LJvRqC14rRLbPQGOG7gRTr8FMoKDihSu.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+.docs_container {
+    position: relative;
+    left: 25%;
+    text-align: center;
+    align-items: center;
+    background-color: #333;
+    border: 2px solid #404040;
+    color: white;
+    padding: 20px;
+    width: 50%;
+    height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.doctitle {
+    position: relative;
+    top: 5%;
+    font-size: 28px;
+    margin-bottom: 90px;
+    color: white;
+}
+
+.label {
+    background-color: #0784b5;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 40px;
+    display: block;
+    width: 300px; /* Set a fixed width for all buttons */
+    text-align: center; /* Center the text horizontally */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+
+  }
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Your Projects button styles */
+  .yourdocuments {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+  
+  /* Your Projects button container styles */
+  .your-projects-button-container {
+    margin-right: 20px;
+    /* Adjust margin for spacing */
+  }
+  
+
+  .yourdocuments:hover {
+    background-color: #555 ;
+  }

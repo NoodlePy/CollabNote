@@ -4,13 +4,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const htmlContent = `
-    <!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="mega_style.css">
+  <link rel="stylesheet" href="./mega_style.css">
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/decoupled-document/ckeditor.js"></script>
 </head>
 
@@ -30,20 +31,21 @@ const htmlContent = `
   <div id="editor" class="notepad">
     <p>Begin writing!</p>
   </div>
-
+  
   <div class="container">
     <div class="invite-container">
       <h2>Invite Others With:</h2>
-      <div class="popup" type="text" id="code" onclick="showCodePopup()">_
-        <span class=" popuptext" id="codePopup">Copied Code!</span>
+      <div class="popup" type="text" id="code" onclick="copyCode()">_
+
       </div>
       <p>OR</p>
-      <div class="popup" type="text" id="link" onclick="showLinkPopup()">_
-        <span class="popuptext" id="linkPopup">Copied Link!</span>
+      <div class="popup" type="text" id="link" onclick="copyLink()">_
+
       </div>
     </div>
   </div>
-  <script src=mega_js.js></script>
+  <div id="popup" class="popup-message">Copied!</div>
+  <script src=./mega_js.js></script>
   <script>
     DecoupledEditor
       .create(document.querySelector('#editor'))

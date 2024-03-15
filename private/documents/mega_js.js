@@ -7,33 +7,42 @@ window.onload = function() {
   const link = window.location.href;
   var page_file = link.substring(link.length - 11);
   const code = page_file.replace(".html", "")
-  link_div.innerHTML = link + `<span class="popuptext" id="linkPopup">Copied Link!</span>`
-  code_div.innerHTML = code + `<span class="popuptext" id="codePopup">Copied Code!</span>`
+  link_div.innerHTML = link 
+  code_div.innerHTML = code
   console.log(code)
   console.log(link)
 }
 
-async function showCodePopup() {
-  console.log("code clicked")
-  var popup = document.getElementById("codePopup");
-  popup.classList.toggle("show");
-  await delay(1000);
-  popup.classList.toggle("show");
-  navigator.clipboard.writeText((code_div.textContent).replace("Copied Code!", ""));
-  console.log("fuc")
+async function copyCode() {
+  const codeDiv = document.getElementById("code");
+  const codeText = codeDiv.textContent.trim();
+  await navigator.clipboard.writeText(codeText);
+
+  // Show popup message
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000); // Hide the message after 2 seconds
 }
 
-async function showLinkPopup() {
-  console.log("link clicked")
-  var popup = document.getElementById("linkPopup");
-  popup.classList.toggle("show");
-  await delay(1000);
-  popup.classList.toggle("show");
-  navigator.clipboard.writeText((link_div.textContent).replace("Copied Link!", ""));
+async function copyLink() {
+  const linkDiv = document.getElementById("link");
+  const linkText = linkDiv.textContent.trim();
+  await navigator.clipboard.writeText(linkText);
+
+  // Show popup message
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000); // Hide the message after 2 seconds
 }
+
 
 yourDocsButton.addEventListener('click', function yourDocsHandler() {
   splittedLocation = window.location.href.split("/")
   item_to_replace = splittedLocation[splittedLocation.length - 1]
   window.location.href = window.location.href.replace("private/documents/"+item_to_replace , "your_documents.html")
 })
+

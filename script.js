@@ -93,10 +93,8 @@ function handleDocnameSubmit(event) {
         }
         appendNewDocument(docname,doccode)
         // Redirect the user to the new HTML page
-        var current_window_loc = window.location.href
         const file_name = docname + "-" + doccode
-        current_window_loc = current_window_loc.replace("index.html",`private/documents/${file_name}.html`)
-        window.location.href = current_window_loc
+        window.location.href = window.location.href.replace("index.html",`private/documents/${file_name}.html`)
       } else {
         // Request failed
         console.error("Request failed:", request.status, request.statusText);

@@ -79,7 +79,7 @@ app.post('/process', (req, res) => {
     const doccode = req.body.doccode;
     // Handle the docname data here
     console.log(__dirname);
-    const docFilename = `${__dirname}/documents/${docname}`+"-"+`${doccode}`+".html";
+    const docFilename = `${__dirname}/documents/htmls/${docname}`+"-"+`${doccode}`+".html";
     
     fs.writeFile(docFilename, htmlContent, (err) => {
         if (err) {
@@ -101,7 +101,7 @@ app.post('/process', (req, res) => {
 app.get('/find', (req, res) => {
   const doccode = req.query.doccode; // Get the doccode from the query parameters
   var fileName = ``;
-  fs.readdir('documents/', (err, files) => {
+  fs.readdir('documents/htmls/', (err, files) => {
     files.forEach(file => {
       console.log(file);
       foundFile = file.includes(doccode)

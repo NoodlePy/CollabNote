@@ -5,13 +5,15 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const htmlContent = `
  
+
+ 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./mega_style.css">
+  <link rel="stylesheet" href="../assets/mega_style.css">
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/decoupled-document/ckeditor.js"></script>
 </head>
 
@@ -45,7 +47,7 @@ const htmlContent = `
     </div>
   </div>
   <div id="popup" class="popup-message">Copied!</div>
-  <script src=./mega_js.js></script>
+  <script src=../assets/mega_js.Js></script>
   <script>
     DecoupledEditor
       .create(document.querySelector('#editor'))
@@ -64,6 +66,7 @@ const htmlContent = `
 </body>
 
 </html>
+    
     `
 
 
@@ -79,7 +82,7 @@ app.post('/process', (req, res) => {
     const doccode = req.body.doccode;
     // Handle the docname data here
     console.log(__dirname);
-    const docFilename = `${__dirname}/documents/htmls/${docname}`+"-"+`${doccode}`+".html";
+    const docFilename = `${__dirname}/documents/${docname}`+"-"+`${doccode}`+".html";
     
     fs.writeFile(docFilename, htmlContent, (err) => {
         if (err) {
@@ -101,7 +104,7 @@ app.post('/process', (req, res) => {
 app.get('/find', (req, res) => {
   const doccode = req.query.doccode; // Get the doccode from the query parameters
   var fileName = ``;
-  fs.readdir('documents/htmls/', (err, files) => {
+  fs.readdir('documents/', (err, files) => {
     files.forEach(file => {
       console.log(file);
       foundFile = file.includes(doccode)
